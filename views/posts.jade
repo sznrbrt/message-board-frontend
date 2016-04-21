@@ -1,0 +1,23 @@
+extends ./board.jade
+
+block posts
+  each post in posts
+    +post(post.name, post.day, post.time, post.imgUrl, post.content)
+
+//- Mixin for a post
+mixin post(name, day, time, imgUrl, content)
+  div.row
+    div.col-xs-12.col-md-12.posts
+      div.row.postItem.template
+        div.panel.panel-default.post.center
+          div.panel-heading Added by 
+            a(href='').name #{name}
+            span.date 
+              span.day #{day}
+              span.time #{time}
+          div.panel-body 
+            div.row
+              div.col-xs-2.imageBox
+                img.postImage(src=imgUrl, alt="")
+              div.col-xs-10.postBody #{content}
+              
