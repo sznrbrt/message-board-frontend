@@ -118,8 +118,7 @@ body {
 
 .day {
   font-size: 80%;
-  position: relative;
-  top: 0px;
+  margin-right: 5px;
 }
 
 .postImage {

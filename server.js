@@ -2,7 +2,7 @@
 
 var posts = [
   {
-    "name": 'norb',
+    "name": '@norb',
     "day": 'April 20th 2016,',
     "time": '23:23 pm',
     "imgUrl": 'https://upload.wikimedia.org/wikipedia/commons/d/d3/Bubblesort_Animation.gif',
