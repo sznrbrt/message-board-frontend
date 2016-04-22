@@ -5,7 +5,6 @@ $(function() {
 });
 
 function addPost() {
-  $('.newPost').removeClass('animated rubberBand');
   var newPost = {};
   newPost.name = '@' + $('#input-name').val();
   newPost.url = $('#input-url').val() || "http://placehold.it/100x100";
@@ -34,10 +33,14 @@ function addPost() {
   $postItem.find('.postBody').text(newPost.post);
   $postItem.find('.day').text(newPost.day);
   $postItem.find('.time').text(newPost.time);
-  $postItem.addClass('template animated slideInRight');
+  $postItem.addClass('template animated slideInRight').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+            $($postItem).removeClass('animated ' + 'slideInRight');
+        });
 
   $('.posts').append($postItem);
   $('.modal').modal('hide')
-  $('.newPost').addClass('animated rubberBand');
+  $('.newPost').addClass('animated rubberBand').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+            $('.newPost').removeClass('animated ' + 'rubberBand');
+        });
   $('.has-error').removeClass('has-error');
 }
